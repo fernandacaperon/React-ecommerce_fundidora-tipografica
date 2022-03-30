@@ -1,4 +1,6 @@
-const Navbar = () => {
+import CartWidget from "./CartWidget";
+
+const NavBar = () => {
     return (
         <div className="App"> 
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -13,6 +15,7 @@ const Navbar = () => {
                     <a class="nav-link" href="#">Features</a>
                     <a class="nav-link" href="#">Pricing</a>
                     <a class="nav-link disabled">Disabled</a>
+                    <a class="nav-link disabled">  <CartWidget /> </a>
                     </div>
                    </div>
                 </div>
@@ -21,4 +24,4 @@ const Navbar = () => {
     );
 }
 
-export default Navbar;
+export default NavBar;

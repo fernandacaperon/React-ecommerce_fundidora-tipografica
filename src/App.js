@@ -1,13 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './components/Navbar';
+import NavBar from './components/NavBar';
+import itemListContainer from './components/ItemListContainer';
 
 function App () {
   return (
-    <Navbar />
-    <div>Desafio 3</div>
-  )
+    <> 
+      <NavBar /> 
+      <itemListContainer gretting = "Productos" />
+    </>
+  );
 }
 
 export default App;
