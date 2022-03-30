@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 function App () {
   return (
     <Navbar />
-    <div>Desafio 2</div>
+    <div>Desafio 3</div>
   )
 }
 
