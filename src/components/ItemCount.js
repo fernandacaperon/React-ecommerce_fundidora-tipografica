@@ -4,7 +4,7 @@ const ItemCount = (props) => {
     const [rate, setCont] = useState(0);
 
     const increment = () => {
-        if (rate < initiql){
+        if (rate < initial){
             setRate(rate +1);
         }
         console.log(count);
