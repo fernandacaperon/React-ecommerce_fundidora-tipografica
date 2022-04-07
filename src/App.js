@@ -9,9 +9,12 @@ function App () {
     <> 
       <NavBar /> 
       <itemListContainer gretting = "Productos" />
-      <ItemCount stock = {5} initial= {1} onAdd={onAdd} />
+      <ItemCount stock = {5} initial= {1} />
     </>
   );
 }
 
 export default App;
+
+{/* <ItemCount stock = {5} initial= {1} onAdd={onAdd} /> */}
+
