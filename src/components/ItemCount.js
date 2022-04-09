@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Item from "./Item";
+import ItemListContainer from "./ItemListContainer";
 
 const ItemCount = (props) => {
     const [rate, setCont] = useState(0);

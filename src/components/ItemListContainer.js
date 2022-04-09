@@ -1,10 +1,13 @@
 import Item from "./Item";
 import { useEffect, useState } from "react";
 import products from "../utils/products";
+import customFetch from "../utils/customFetch";
+import ItemList from "./ItemList";
 const {Products} = require ('../utils/products');
 
 
-const itemListContainer = ({gretting}) => {
+
+const ItemListContainer = ({gretting}) => {
     const [lista, setDatos] = useState ([]);
 
     useEffect ( () => {
@@ -21,13 +24,10 @@ const itemListContainer = ({gretting}) => {
     return (
         <> 
             <wrapper>{gretting} </wrapper>
-            <ItemList item={lista} />
+            <ItemList tipografia={lista} />
             <ItemCount stock = {5} initial= {1} />
         </>
     );
 }
 
-export default itemListContainer;
-
-
-            {/* <h1> {gretting}</h1> */}
+export default ItemListContainer;
