@@ -1,26 +1,21 @@
-import customFetch from "../utils/customFetch";
-import ItemList from "./ItemList";
-import ItemListContainer from "./ItemListContainer";
-import Products from "../utils/products";
+import React from "react";
+import { Card, CardImg, CardBody, CardTitle, CardText,CardSubtitle,Button } from "reactstrap";
 
-let is_ok = true; 
-
-let tipografias = ["Alegreya","Bodoni", "Open Sans", "Piazolla", "San Francisco"];
-
-let lista = (time, task) => {
-    return new Promise ((resolve, reject) => {
-        if (is_ok) {
-            setTimeout (()=> {
-                resolve(task) 
-            }, time);
-        } else { 
-            reject ("Error")
-        }
-    })
+export default function Item ({ id, name, cost, description, image}){
+    console.log(image,"Prueba en item")
+    return (
+    <div> 
+        <Card Key={id}>
+            <CardImg
+                alt="Card image cap"
+                src={image.url}
+                top
+                width="100%"
+            />
+            <CardBody>
+                <CardTitle tag="h5">{name}</CardTitle>
+                <CardText>{cost} </CardText>
+            </CardBody>
+        </Card>
+    </div>)
 }
-
-lista (2000, tipografias)
-    .then (lista => console.log (tipografias))
-    .catch (err => console.log (err))
-
-export default Item;

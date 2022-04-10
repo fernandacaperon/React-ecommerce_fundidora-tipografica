@@ -1,32 +1,30 @@
-import { useState } from "react";
-import Item from "./Item";
-import ItemListContainer from "./ItemListContainer";
+import React, {useState} from "react";
 
-const ItemCount = (props) => {
-    const [rate, setCont] = useState(0);
+const ItemCount = () => {
+
+    const [contador, setContador] = useState (1);
 
     const increment = () => {
-        if (rate < initial){
-            setRate(rate +1);
+       if (contador < 5){
+            setContador (contador+1)
         }
-        console.log(count);
     }
 
-    const decrease = () => {
-        if (rate > initial) {
-            setRate(rate-1);
+    const decrement = () => {
+        if (contador > 1){
+            setContador (contador-1)
+            }
         }
-        console.log(count);
-    }
 
     return (
-        <div className="count-container">
-            <h3>Contador</h3>
-            <p>{rate}</p>
-            <button onClick={increment}>-</button>
-            <button onClick={decrease}>+</button>
+        <div>
+            <div className="count-container">
+                <button onClick={decrement}>-</button> {contador}
+                <button onClick={increment}>+</button>
+                <button> Agregar al carrito</button>
+            </div>
         </div>
-    )
+    );
 }
 
 export default ItemCount;

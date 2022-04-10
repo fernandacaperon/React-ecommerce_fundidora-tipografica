@@ -1,16 +1,18 @@
-import Item from "./Item";
-import products from "../utils/products";
+import React from "react";
+import Item from './Item'
+import { Container, Row } from "reactstrap";
 
-const ItemList = ({ tipografias }) => {
+export default function ItemList ({objetos}) {
+    console.log (objetos)
     return (
-        <ProductsContainer>
-            {
-                tipografias.length > 0  
-                ? tipografias.map (tipografias => <Item key={tipografia.id} title={tipografia.name} price={tipografia.cost} description={tipografia.description} pictureUrl={tipografia.image[0]}> );
-                : <p> Cargando...</p>
-            }
-        </ ProductsContainer>
-    ); 
+        <>
+           <Container>
+               <Row>
+                  { objetos.map ((object) => 
+                  <Item key={object.id} {...object} />)}
+               </Row>
+           </Container>
+        </>
+    )
 }
 
-export default ItemList;

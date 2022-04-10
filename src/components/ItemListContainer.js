@@ -1,33 +1,27 @@
-import Item from "./Item";
 import { useEffect, useState } from "react";
-import products from "../utils/products";
-import customFetch from "../utils/customFetch";
-import ItemList from "./ItemList";
-const {Products} = require ('../utils/products');
+import ItemCount from "./ItemCount";
+import { getProducts } from "../utils/products";
+import ItemList from './ItemList';
 
 
+const ItemListContainer = () => {
 
-const ItemListContainer = ({gretting}) => {
-    const [lista, setDatos] = useState ([]);
+    const [tipografias, setTipografias] = useState ([]);
 
-    useEffect ( () => {
-        customFetch (2000, products) 
-        .then (result => setDatos (result))
-        .catch (err => console.log (err))
-    }, []);
-
-    const onAdd = (qty) => {
-        alert ("Seleccionaste " + qty + "items.")
-    }
-
+    useEffect(() => {
+        async function pedirProducts () {
+            let productsLlegando = await getProducts ();
+            setTipografias (productsLlegando)
+        }
+        pedirProducts()
+    }, [] )
 
     return (
-        <> 
-            <wrapper>{gretting} </wrapper>
-            <ItemList tipografia={lista} />
-            <ItemCount stock = {5} initial= {1} />
+        <>
+        <ItemCount stock="5" initial="0"/>
+        <ItemList objetos= {tipografias} />
         </>
-    );
+    )
 }
 
 export default ItemListContainer;
