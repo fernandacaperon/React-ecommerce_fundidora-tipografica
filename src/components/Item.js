@@ -10,7 +10,7 @@ export default function Item ({ id, name, cost, description, image}){
                 alt="Card image cap"
                 src={image.url}
                 top
-                width="100%"
+                width="30%"
             />
             <CardBody>
                 <CardTitle tag="h5">{name}</CardTitle>

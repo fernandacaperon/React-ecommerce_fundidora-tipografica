@@ -1,17 +1,23 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+// import ItemListContainer from './components/ItemListContainer';
+// import ItemList from './components/ItemList';
+import ItemDetail from './components/ItemDetail'
+import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemCount from './components/ItemCount';
-import ItemList from './components/ItemList';
+
 
 function App () {
   return (
     <> 
       <NavBar /> 
-      <ItemListContainer gretting = "Productos" />
+      {/* <ItemListContainer gretting = "Productos" /> */}
+      <ItemDetailContainer gretting = "Detalle" />
+      <ItemCount stock = {5} initial= {1} />
     </>
   );
 }
 
 export default App;
+

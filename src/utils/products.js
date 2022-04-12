@@ -1,5 +1,6 @@
-import itemListContainer from "../components/ItemListContainer";
+// import itemListContainer from "../components/ItemListContainer";
 import Item from "../components/Item";
+import ItemDetailContainer from "../components/ItemDetailContainer";
 
 const products = [
     {
@@ -38,10 +39,20 @@ const products = [
     },
 ]
 
-export const getProducts = () => {
+// export const getProducts = () => {
+//     return new Promise ((resolve, reject)=> {
+//         setTimeout ( () => {
+//             return resolve (products);
+//         }, 2000)
+//     })
+// }
+
+export const getDetail = () => {
     return new Promise ((resolve, reject)=> {
         setTimeout ( () => {
-            return resolve (products);
+            return resolve (products[2]);
         }, 2000)
     })
 }
+
+
