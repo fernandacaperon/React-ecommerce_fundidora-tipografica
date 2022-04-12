@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ItemCount from "./ItemCount";
-import ItemDetail from "./ ItemDetail";
+import ItemDetail from "./ItemDetail";
 import { getDetail } from "../utils/products";
 
 const ItemDetailContainer = () => {
@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-        {/* <ItemCount stock="5" initial="0"/> */}
+        <ItemCount stock="5" initial="0"/>
         <ItemDetail item= {tipografias} />
         </>
     )

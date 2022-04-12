@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar';
 // import ItemListContainer from './components/ItemListContainer';
 // import ItemList from './components/ItemList';
-import ItemDetail from './components/ItemDetail'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemCount from './components/ItemCount';
 
@@ -18,6 +17,5 @@ function App () {
     </>
   );
 }
-
 export default App;
 

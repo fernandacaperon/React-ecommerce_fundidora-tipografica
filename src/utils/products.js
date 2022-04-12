@@ -1,6 +1,6 @@
 // import itemListContainer from "../components/ItemListContainer";
-import Item from "../components/Item";
-import ItemDetailContainer from "../components/ItemDetailContainer";
+// import Item from "../components/Item";
+// import ItemDetailContainer from "../components/ItemDetailContainer";
 
 const products = [
     {
