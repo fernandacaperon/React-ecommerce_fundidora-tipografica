@@ -19,9 +19,9 @@ const products = [
     },{
         id: 3,
         name: "Open Sans",
-        cost: 25,
-        description: "Lorem ipsum",
-        image: ["https://imborrable.com/wp-content/uploads/2021/01/google-fonts-top-10-tipografias-open-sans.png"]
+        cost: "U$U 25,00",
+        description: "Open Sans is a humanist sans serif typeface designed by Steve Matteson, Type Director of Ascender Corp. This version contains the complete 897 character set, which includes the standard ISO Latin 1, Latin CE, Greek and Cyrillic character sets.",
+        image: ["https://academiadediseno.com/wp-content/uploads/2020/05/google-fonts-open-sans.jpg"]
     },
     {
         id: 4,

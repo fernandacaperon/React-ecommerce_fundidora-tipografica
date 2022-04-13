@@ -17,8 +17,8 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-        <ItemCount stock="5" initial="0"/>
-        <ItemDetail item= {tipografias} />
+        {/* <ItemCount stock="5" initial="0"/> */}
+        <ItemDetail items= {tipografias} />
         </>
     )
 }

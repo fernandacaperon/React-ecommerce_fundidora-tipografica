@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardImg, CardBody, CardTitle, CardText,CardSubtitle,Button } from "reactstrap";
+import { Card, CardImg, CardBody, CardTitle, CardText, CardSubtitle, Button } from "reactstrap";
 
 export default function Item ({ id, name, cost, description, image}){
     console.log(image,"Prueba en item")

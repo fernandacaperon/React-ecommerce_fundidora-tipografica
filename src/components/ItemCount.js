@@ -17,11 +17,11 @@ const ItemCount = () => {
         }
 
     return (
-        <div>
+        <div class="txt-violeta ">
             <div className="count-container">
-                <button onClick={decrement}>-</button> {contador}
-                <button onClick={increment}>+</button>
-                <button> Agregar al carrito</button>
+                <button onClick={decrement} class="btn-white">-</button> {contador}
+                <button onClick={increment}  class="btn-white">+</button>
+                <button  class="btn-color-violeta"> Agregar al carrito</button>
             </div>
         </div>
     );
