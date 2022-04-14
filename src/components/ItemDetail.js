@@ -21,7 +21,7 @@ export default function ItemDetail ({items}){
                         <ItemCount initial={1} stock={items.stock} />
                 </div>
             </div>
-        ) : (<h1> cargando</h1>
+        ) : (<h3> Cargando...</h3>
         )}
         </Row> 
         </Container>

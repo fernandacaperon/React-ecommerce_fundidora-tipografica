@@ -1,32 +1,24 @@
 import CartWidget from "./CartWidget";
+import { Link} from 'react-router-dom';
 
 const NavBar = () => {
     return (
         <div className="App" > 
-            <nav class="navbar navbar-expand-lg nav-background container-fluid">
+            <nav class="navbar navbar-expand-lg bg-nav">
                 <div class="container-fluid">
-                    <a class="navbar-brand nav-text" href="#">Home</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav ">
-                            {/* <a class="nav-link nav-text" aria-current="page" href="#">Home</a> */}
-                            <a class="nav-link"  href="#">Tipografias</a>
-                            <a class="nav-link" href="#">Catalogo</a>
-                        </div>
-                        <div class="d-flex justify-content-end"> <a >  <CartWidget /> </a>
-                        </div>
-                   </div>
+                    <Link to='/'> <a class="navbar-brand text-violeta" href="#">Home</a> </Link> 
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <Link to='category/1' ><li class="nav-item"><a class="nav-link" href="#">Sans-Serif</a></li></Link>
+                            <Link to='category/2'><li class="nav-item"><a class="nav-link" href="#">Serif</a></li></Link>
+                            <Link to='category/3'><li class="nav-item"><a class="nav-link" href="#">Display</a></li></Link>
+                        </ul>
+                        <span class="navbar-text"> <a> <CartWidget/> </a> </span>
+                    </div>
                 </div>
-            </nav>  
+            </nav>
         </div>
     );
 }
 
-export default NavBar;
-
-{/* <form class="d-flex">
-<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-<button class="btn btn-outline-success" type="submit">Search</button>
-</form> */}
+export default NavBar; 

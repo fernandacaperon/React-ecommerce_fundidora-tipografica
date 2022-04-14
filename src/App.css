@@ -40,11 +40,12 @@
 }
 
 .nav-text {
-   color: #6439FF;
+   color: hsl(253, 100%, 61%);
  }
 
- .nav-background{
+ .bg-nav{
   background-color: #F4F4FF;
+  padding: 15px;
  }
 
  .btn-white {
