@@ -10,10 +10,10 @@ import { products } from "../utils/products";
 const ItemDetailContainer = () => {
 
     const [tipografias, setTipografias] =  useState ({});
-    const { idCategory } = useParams ();
+    const { idItem } = useParams ();
 
     useEffect ( () => {
-        customFetch (2000, products.find (item => item.id === parseInt (idCategory)))
+        customFetch (2000, products.find (item => item.id === parseInt (idItem)))
         .then(result => setTipografias(result))
         .catch(err => console.log(err))
     }, []);

@@ -5,18 +5,18 @@ import { Card, CardImg, CardBody, CardTitle, CardText, CardSubtitle, Button, Car
 export default function Item ({ id, name, cost, description, image}){
     console.log(image,"Prueba en item")
     return (
-    <container> 
-        <CardGroup>
-            <Card Key={id}>
-                <CardImg alt="Card image" src={image} top width="30%"/>
-                <CardBody>
-                    <CardTitle tag="h5" class="title-card">{name}</CardTitle>
-                    <CardSubtitle className="mb-2 text-muted" tag="h6" class="txt-violeta"> {cost} </CardSubtitle>
-                    <CardText>{description} </CardText>
-                    <Button class="btn-color-verde" > Comprar</Button>
-                 </CardBody>
-            </Card>  
-        </CardGroup>
-    </container>
+        <container> 
+            <CardGroup>
+                <Card Key={id}>
+                    <CardImg alt="Card image" src={image} top width="30%"/>
+                    <CardBody>
+                        <CardTitle tag="h5" class="title-card">{name}</CardTitle>
+                        <CardSubtitle className="mb-2 text-muted" tag="h6" class="txt-violeta"> {cost} </CardSubtitle>
+                        <CardText>{description} </CardText>
+                        <Link to={`/item/${id}`}><Button class="btn-color-verde" > Comprar</Button> </Link>
+                    </CardBody>
+                </Card>  
+            </CardGroup>
+        </container>
     )
 }
