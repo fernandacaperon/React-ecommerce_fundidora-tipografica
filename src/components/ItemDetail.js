@@ -1,15 +1,9 @@
 import React from "react";
-import { useState } from "react";
-import { Link } from 'react-router-dom';
-import ItemCount from "./ItemCount";
-import { getProducts } from "../utils/products";
-import Item from "./Item";
 import { Container, Row } from "reactstrap";
+import ItemCount from "./ItemCount";
 
 
 const ItemDetail = ({ items }) => {
-
-    const [tipografias, setTipografias] = useState(0);
     
     return (
         <> 

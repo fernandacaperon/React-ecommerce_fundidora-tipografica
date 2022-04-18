@@ -35,7 +35,7 @@ const products = [
         image: ["https://www.huertatipografica.com/uploads/piazzolla-ZE3IyG.png"]
     },
     {
-        id: 1,
+        id: 5,
         name: "San Francisco",
         cost: "US$ 150",
         description: "Lorem ipsum",
@@ -43,20 +43,7 @@ const products = [
     },
 ]
 
-export const getProducts = () => {
-    return new Promise ((resolve, reject)=> {
-        setTimeout ( () => {
-            return resolve (products);
-        }, 2000)
-    })
-}
 
-export const getDetail = () => {
-    return new Promise ((resolve, reject)=> {
-        setTimeout ( () => {
-            return resolve (products[2]);
-        }, 2000)
-    })
-}
-
-
+module.exports = {
+    products,
+  }

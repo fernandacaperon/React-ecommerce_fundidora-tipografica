@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import customFetch from "../utils/customFetch";
-import ItemCount from "./ItemCount";
+// import ItemCount from "./ItemCount";
 import ItemDetail from "./ItemDetail";
-import { getDetail, getProducts } from "../utils/products";
+import { products } from "../utils/products";
 
 
 
@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
     const { idCategory } = useParams ();
 
     useEffect ( () => {
-        customFetch (2000, getProducts.find (item => item.id === parseInt (idCategory)))
+        customFetch (2000, products.find (item => item.id === parseInt (idCategory)))
         .then(result => setTipografias(result))
         .catch(err => console.log(err))
     }, []);
