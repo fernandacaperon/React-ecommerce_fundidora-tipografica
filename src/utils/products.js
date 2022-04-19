@@ -9,6 +9,7 @@ const products = [
         name: "Alegreya",
         cost: "US$ 30",
         description: "Lorem ipsum",
+        stock: 5,
         image: ["https://i0.wp.com/www.dafontfree.io/wp-content/uploads/2018/10/Alegreya.jpg?fit=698%2C349&ssl=1"]
     },
     {
@@ -17,6 +18,7 @@ const products = [
         name: "Bodoni",
         cost: "US$ 40",
         description: "Lorem ipsum",
+        stock: 5,
         image: ["https://imborrable.com/wp-content/uploads/2020/10/top-10-tipografias-bodoni.png"]
     },{
         id: 3,
@@ -24,6 +26,7 @@ const products = [
         name: "Open Sans",
         cost: "US$ 25,00",
         description: "Open Sans is a humanist sans serif typeface designed by Steve Matteson, Type Director of Ascender Corp. This version contains the complete 897 character set, which includes the standard ISO Latin 1, Latin CE, Greek and Cyrillic character sets.",
+        stock: 5,
         image: ["https://academiadediseno.com/wp-content/uploads/2020/05/google-fonts-open-sans.jpg"]
     },
     {
@@ -32,6 +35,7 @@ const products = [
         name: "Piazolla",
         cost: "US$ 20",
         description: "Lorem ipsum",
+        stock: 5,
         image: ["https://www.huertatipografica.com/uploads/piazzolla-ZE3IyG.png"]
     },
     {
@@ -39,6 +43,7 @@ const products = [
         name: "San Francisco",
         cost: "US$ 150",
         description: "Lorem ipsum",
+        stock: 5,
         image: ["https://fontsfree.net/assets/preview/45311-big-thumbs3-download-v1.png"]
     },
 ]
