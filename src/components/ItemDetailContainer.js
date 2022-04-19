@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
         customFetch (2000, products.find (item => item.id === parseInt (idItem)))
         .then(result => setTipografias(result))
         .catch(err => console.log(err))
-    }, []);
+    }, [idItem]);
 
     return <ItemDetail items={tipografias} />
     

@@ -6,15 +6,15 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
     return (
         <div className="App" > 
-            <nav class="navbar navbar-expand-lg bg-color">
-                <div class="container-fluid">
-                    <Link to='/'><a class="navbar-brand text-violeta" href="#">Home</a></Link>
-                    <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <Link to='/category/1'><li class="nav-item"><a class="nav-link" href="#">Sans-Serif</a></li> </Link>    
-                        <Link to='/category/2'><li class="nav-item"><a class="nav-link" href="#">Serif</a></li> </Link>  
+            <nav className="navbar navbar-expand-lg bg-color">
+                <div className="container-fluid">
+                    <Link to='/'className="navbar-brand text-violeta">Home</Link>
+                    <div className="collapse navbar-collapse" id="navbarText">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <Link to='/category/1'><li className="nav-item nav-link"> Sans-Serif</li> </Link>    
+                        <Link to='/category/2'><li className="nav-item nav-link"> Serif</li> </Link>  
                         </ul>
-                        <span class="navbar-text"> <a> <CartWidget/> </a> </span>
+                        <span className="navbar-text"> <CartWidget/> </span>
                     </div>
                 </div>
             </nav>
