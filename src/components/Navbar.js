@@ -14,7 +14,7 @@ const NavBar = () => {
                         <Link to='/category/1'><li className="nav-item nav-link"> Sans-Serif</li> </Link>    
                         <Link to='/category/2'><li className="nav-item nav-link"> Serif</li> </Link>  
                         </ul>
-                        <span className="navbar-text"> <CartWidget/> </span>
+                       <span className="navbar-text"> <CartWidget/> </span>
                     </div>
                 </div>
             </nav>

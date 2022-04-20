@@ -1,17 +1,18 @@
 import React, {useState} from "react";
+// import Cart from "./Cart";
 
-const ItemCount = () => {
+const ItemCount = ({ stock = 0, initial = 0,  onAdd }) => {
 
-    const [contador, setContador] = useState (1);
+    const [contador, setContador] = useState (0);
 
     const increment = () => {
-       if (contador < 5){
+       if (contador < stock){
             setContador (contador+1)
         }
     }
 
     const decrement = () => {
-        if (contador > 1){
+        if (contador > initial-1){
             setContador (contador-1)
             }
         }
@@ -21,10 +22,21 @@ const ItemCount = () => {
             <div className="count-container">
                 <button onClick={decrement} className="btn-white">-</button> {contador}
                 <button onClick={increment}  className="btn-white">+</button>
-                <button  className="btn-color-violeta"> Agregar al carrito</button>
+                {/* <button className="btn-color-violeta"> Agregar al carrito</button> */}
+                {
+                    stock && contador
+                    ? <button className="btn-color-violeta" onClick={ () => onAdd (contador)}> Add to cart </button>
+                    : <button className="btn-color-violeta"> Add to Cart</button>
+                }
             </div>
         </div>
     );
 }
 
 export default ItemCount;
+
+
+// onClick={ () => onAdd (contador)
+
+// ? <button className="btn-color-violeta" onClick={ () => alert ('contador')}> Add to cart </button>
+//                     : <button className="btn-color-violeta"> Add to Cart</button>
