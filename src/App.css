@@ -71,7 +71,18 @@
   background-color: white;
   border-radius: 3px;
   padding: 6px 12px;
+  margin: 5px;
   font-weight: 400;
+}
+
+.btn-remove{
+  color: #6439FF;
+  border: 2px solid #76f7b9;
+  background-color: white;
+  border-radius: 3px;
+  padding: 6px 12px;
+  font-weight: 400;
+  width: 10%;
 }
 
 .txt-violeta {
@@ -92,6 +103,7 @@ image {
   color: #6439FF;
   font-weight: 200;
   margin-bottom: 1rem;
+  margin-left: 2rem;
 }
 
 .title-card {
@@ -105,4 +117,3 @@ image {
   background-color: #F4F4FF;
   padding: 2rem;
 }
-

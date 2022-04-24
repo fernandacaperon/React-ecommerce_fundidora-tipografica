@@ -10,8 +10,6 @@ const ItemListContainer = () => {
     const [tipografias, setTipografias] = useState ([]);
     const { idCategory } = useParams ();
 
-    // console.log (idCategory);
-
     useEffect (()=> {
         if (idCategory === undefined) {
             customFetch (2000, products)

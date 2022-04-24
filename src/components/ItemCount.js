@@ -1,5 +1,4 @@
-import React, {useState} from "react";
-// import Cart from "./Cart";
+import React, { useState } from "react";
 
 const ItemCount = ({ stock = 0, initial = 0,  onAdd }) => {
 
