@@ -1,14 +1,21 @@
- import 'bootstrap/dist/css/bootstrap.min.css';
- import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import { useContext } from 'react';
+import { CartContext } from './CartContext';
 
 
 const CartWidget = () => {
 
+    const test = useContext(CartContext);
 
     return (
-        <p className="d-flex justify-content-end"> <i className="bi bi-cart nav-text" style={{ fontSize: 28 }} >  
-            <span className="position-absolute top-50 translate-middle badge  bg-danger" style={{ fontSize: 10 }}> 3 <span className="visually-hidden">unread messages</span>
-      </span></i></p>
+        <p className="d-flex justify-content-end"> 
+            <i className="bi bi-cart nav-text" style={{ fontSize: 28 }}>  
+                <span className="position-absolute top-50 translate-middle badge bg-danger" style={{ fontSize: 10 }}> 
+                    <span className="visually-hidden"></span> 3
+                </span>
+            </i>
+        </p> 
     )
 }
 

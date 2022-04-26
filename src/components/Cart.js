@@ -1,9 +1,15 @@
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
-import { Card, CardImg, CardBody, CardTitle, CardSubtitle } from "reactstrap";
-// import { CardText, Button, CardGroup } from "reactstrap";
+import { Card, CardBody, CardTitle, CardSubtitle } from "reactstrap";
+// import { CardText, Button, CardGroup, CardImg, } from "reactstrap";
 import { Link } from 'react-router-dom';
 
+
+// {
+//     stock && contador
+//     ? <button className="btn-color-violeta" onClick={ () => onAdd (contador)}> Add to cart </button>
+//     : <button className="btn-color-violeta"> Agregar al carrito</button>
+// }
 
 
 const Cart = () => {
@@ -13,24 +19,33 @@ const Cart = () => {
     return (
         <Card> 
             <h3 className="title-name txt-violeta itemdetail__title">Carrito de compras </h3>
+            <CardBody>
+            {
+                (test.cartList.length > 0)
+                ? <button onClick={test.removeCart} className="btn-color-violeta"> Vaciar carrito</button>
+                : <p> Tu carrito esta vacio <br></br>
+                <Link to='/'><button className="btn-color-violeta">Continuar comprando</button></Link>
+                </p>                       
+            }
+            </CardBody>
+        
             {
                 test.cartList.length > 0 && (
                     <CardBody>
                         { test.cartList.map  (
-                            items => (
-                                <CardBody> 
-                                    <CardTitle tag="h5" className="title-card">Producto: {items.name} </CardTitle>
-                                    <CardSubtitle>Precio: {items.cost}  </CardSubtitle>
-                                    <CardSubtitle> Cantidad {items.qtyItem} item(s) </CardSubtitle>
+                            item => (
+                                <CardBody key={item.idItem}> 
+                                    <CardTitle tag="h5" className="title-card">Producto: {item.name} </CardTitle>
+                                    <CardSubtitle>Precio: {item.cost}  </CardSubtitle>
+                                    <CardSubtitle> Cantidad {item.qty} item(s) </CardSubtitle>
                                     {/* <CardImg className="" src={items.image} />  */}
+                                    <div className="count-container">
+                                        <button onClick={()=> test.deleteItem(item.id)} className="btn-color-verde"> Eliminar producto</button>
+                                    </div>
                                 </CardBody>
                             )
                         )
                         }
-                        <div className="count-container">
-                            <button onClick={test.deleteItem} className="btn-color-verde"> Eliminar producto</button>
-                            <button onClick={test.removeCart} className="btn-color-verde"> Vaciar carrito</button>
-                        </div>
                         <Link to='/'><button className="btn-color-violeta">Continuar comprando</button></Link>
                     </CardBody>
                 )
@@ -40,29 +55,3 @@ const Cart = () => {
 }
 
 export default Cart;
-
-{/* <ContentCart>
-{
-    test.cartList.length > 0 ? 
-    test.cartList.map(item => 
-     <Product key={item.idItem}>
-            <ProductDetail>
-                <ImageCart src={item.imgItem} />
-                <Details>
-                <span>
-                    <b>Product:</b> {item.nameItem}
-                </span>
-                <TopButton type="filled" onClick={() => test.deleteItem(item.idItem)}>DELETE</TopButton>
-                </Details>
-            </ProductDetail>
-            <PriceDetail>
-                <ProductAmountContainer>
-                <ProductAmount>{item.qtyItem} item(s)</ProductAmount>
-                </ProductAmountContainer>
-                <ProductPrice>$ {item.costItem} each</ProductPrice>
-            </PriceDetail>
-        </Product>
-    )
-    : <TitleCart></TitleCart>
-}
-</ContentCart> */}

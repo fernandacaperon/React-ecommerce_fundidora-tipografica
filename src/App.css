@@ -117,3 +117,7 @@ image {
   background-color: #F4F4FF;
   padding: 2rem;
 }
+
+.text-white {
+  color: white;
+}
