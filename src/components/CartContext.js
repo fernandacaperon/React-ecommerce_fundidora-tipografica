@@ -10,10 +10,10 @@ const CartContextProvider = ({children}) => {
         if ( found === undefined) {
             setCartList ([
                 ...cartList, 
-                item, 
+                item ,    
             ]);
         } else {
-            found.qtyItem += qty;  
+            found.qty += qty;  
         } 
     }   
 
@@ -26,7 +26,7 @@ const CartContextProvider = ({children}) => {
         setCartList ([]);
     }
 
-    const calcItemsQty = () => {
+    const calcItemsQty = (id) => {
         let qtys = cartList.map(item => item.qtyItem);
         return qtys.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
     }

@@ -3,6 +3,7 @@ import { CartContext } from "./CartContext";
 import { Card, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 // import { CardText, Button, CardGroup, CardImg, } from "reactstrap";
 import { Link } from 'react-router-dom';
+// import { products } from "../utils/products";
 
 
 // {
@@ -12,10 +13,11 @@ import { Link } from 'react-router-dom';
 // }
 
 
+
 const Cart = () => {
 
     const test = useContext(CartContext);
-
+  
     return (
         <Card> 
             <h3 className="title-name txt-violeta itemdetail__title">Carrito de compras </h3>
@@ -53,5 +55,6 @@ const Cart = () => {
         </Card>
     );
 }
+
 
 export default Cart;
