@@ -37,12 +37,14 @@ const Cart = () => {
                         { test.cartList.map  (
                             item => (
                                 <CardBody key={item.idItem}> 
-                                    <CardTitle tag="h5" className="title-card">Producto: {item.name} </CardTitle>
-                                    <CardSubtitle>Precio: {item.cost}  </CardSubtitle>
-                                    <CardSubtitle> Cantidad {item.qty} item(s) </CardSubtitle>
+                                    <CardTitle tag="h5" className="title-card">Producto: {item.nameItem} </CardTitle>
+                                    <CardSubtitle>Precio: {item.costItem}  </CardSubtitle>
+                                    <CardSubtitle> Cantidad {item.qtyItem} item(s) </CardSubtitle>
+                                    <CardSubtitle> $ <p number={test.calcTotalPerItem()}> </p></CardSubtitle>
+                                    {/* <CardSubtitle> $ {test.calcTotalPerItem(item.idItem)}  </CardSubtitle> */}
                                     {/* <CardImg className="" src={items.image} />  */}
                                     <div className="count-container">
-                                        <button onClick={()=> test.deleteItem(item.id)} className="btn-color-verde"> Eliminar producto</button>
+                                        <button onClick={()=> test.deleteItem(item.idItem)} className="btn-color-verde"> Eliminar producto</button>
                                     </div>
                                 </CardBody>
                             )
@@ -50,6 +52,15 @@ const Cart = () => {
                         }
                         <Link to='/'><button className="btn-color-violeta">Continuar comprando</button></Link>
                     </CardBody>
+                )
+            }
+
+            {
+                test.cartList.length > 0 &&  (
+                    <CardBody> 
+                    <CardSubtitle> Subtotal <p number={test.calcSubTotal()}> </p> </CardSubtitle>
+                    <CardSubtitle> Total <p number={test.calcTotal()}> </p></CardSubtitle>
+                </CardBody>
                 )
             }
         </Card>

@@ -10,15 +10,21 @@ const CartContextProvider = ({children}) => {
         if ( found === undefined) {
             setCartList ([
                 ...cartList, 
-                item ,    
+                {
+                    idItem: item.id,
+                    imgItem: item.image[0],
+                    nameItem: item.name,
+                    costItem: item.cost,
+                    qtyItem: qty
+                }  
             ]);
         } else {
-            found.qty += qty;  
+            found.qtyItem += qty;  
         } 
     }   
 
     const deleteItem = (id) =>{
-        let result = cartList.filter (item => item.id !== id);
+        let result = cartList.filter (item =>item.idItem != id );
         setCartList (result);
     }
 
@@ -27,12 +33,26 @@ const CartContextProvider = ({children}) => {
     }
 
     const calcItemsQty = (id) => {
-        let qty = cartList.map(item => item.qty);
-        return qty.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
+        let qtys = cartList.map(item => item.qtyItem);
+        return qtys.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
+    }
+
+    const calcTotalPerItem = (idItem) => {
+        let index = cartList.map(item => item.idItem).indexOf(idItem);
+        return cartList[index].costItem * cartList[index].qtyItem;
+    }
+
+    const calcSubTotal = () => {
+        let totalPerItem = cartList.map(item => calcTotalPerItem(item.idItem));
+        return totalPerItem.reduce((previousValue, currentValue) => previousValue + currentValue);
+    }
+
+    const calcTotal = () => {
+        return calcSubTotal();
     }
 
     return  (
-        <CartContext.Provider value={{cartList, addToCart, removeCart, deleteItem, calcItemsQty }}> 
+        <CartContext.Provider value={{cartList, addToCart, removeCart, deleteItem, calcItemsQty, calcItemsQty, calcTotalPerItem,  calcSubTotal, calcTotal }}> 
             {children}
         </CartContext.Provider>
     );

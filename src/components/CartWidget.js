@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { CartContext } from './CartContext';
 
 
@@ -11,8 +11,8 @@ const CartWidget = () => {
     return (
         <p className="d-flex justify-content-end"> 
             <i className="bi bi-cart nav-text" style={{ fontSize: 28 }}>  
-                <span className="position-absolute top-50 translate-middle badge bg-danger" style={{ fontSize: 10 }}> 
-                    <span className="visually-hidden" badgeContent={test.calcItemsQty()}></span> 
+                <span  className="position-absolute top-50 translate-middle badge bg-danger" style={{ fontSize: 10 }}> 
+                    <span className="visually-hidden"></span> {test.calcItemsQty()} 
                 </span>
             </i>
         </p> 
@@ -22,4 +22,15 @@ const CartWidget = () => {
 export default CartWidget;
 
 
+{/* <Badgediv badgeContent={test.calcItemsQty()} color="secondary">
+<ShoppingCartOutlined />
+</Badge> */}
 
+
+{/* <p className="d-flex justify-content-end"> 
+<i className="bi bi-cart nav-text" style={{ fontSize: 28 }}>  
+    <span className="position-absolute top-50 translate-middle badge bg-danger" style={{ fontSize: 10 }}> 
+        <span className="visually-hidden"></span>
+    </span>
+</i>
+</p>  */}
