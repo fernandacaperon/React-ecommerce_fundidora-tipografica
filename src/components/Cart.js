@@ -39,9 +39,8 @@ const Cart = () => {
                                 <CardBody key={item.idItem}> 
                                     <CardTitle tag="h5" className="title-card">Producto: {item.nameItem} </CardTitle>
                                     <CardSubtitle>Precio: {item.costItem}  </CardSubtitle>
-                                    <CardSubtitle> Cantidad {item.qtyItem} item(s) </CardSubtitle>
-                                    <CardSubtitle> $ <p number={test.calcTotalPerItem()}> </p></CardSubtitle>
-                                    {/* <CardSubtitle> $ {test.calcTotalPerItem(item.idItem)}  </CardSubtitle> */}
+                                    <CardSubtitle> Cantidad: {item.qtyItem} item(s) </CardSubtitle>
+                                    <CardSubtitle> Subtotal: $ {test.calcTotalPerItem(item.idItem)}  </CardSubtitle>
                                     {/* <CardImg className="" src={items.image} />  */}
                                     <div className="count-container">
                                         <button onClick={()=> test.deleteItem(item.idItem)} className="btn-color-verde"> Eliminar producto</button>
@@ -58,8 +57,8 @@ const Cart = () => {
             {
                 test.cartList.length > 0 &&  (
                     <CardBody> 
-                    <CardSubtitle> Subtotal <p number={test.calcSubTotal()}> </p> </CardSubtitle>
-                    <CardSubtitle> Total <p number={test.calcTotal()}> </p></CardSubtitle>
+                    <CardSubtitle> Subtotal: <p number={test.calcSubTotal()}> </p> </CardSubtitle>
+                    <CardSubtitle> Total: <p number={test.calcTotal()}> </p></CardSubtitle>
                 </CardBody>
                 )
             }
