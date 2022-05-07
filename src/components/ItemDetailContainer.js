@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import customFetch from "../utils/customFetch";
-// import ItemCount from "./ItemCount";
 import ItemDetail from "./ItemDetail";
-import { products } from "../utils/products";
-
+import { firestoreFetchOne } from "../utils/firestoreFetch.js";
 
 
 const ItemDetailContainer = () => {
@@ -12,11 +9,11 @@ const ItemDetailContainer = () => {
     const [tipografias, setTipografias] =  useState ({});
     const { idItem } = useParams ();
 
-    useEffect ( () => {
-        customFetch (2000, products.find (item => item.id === parseInt (idItem)))
-        .then(result => setTipografias(result))
-        .catch(err => console.log(err))
-    }, [idItem]);
+    useEffect(() => {
+        firestoreFetchOne(idItem)
+            .then(result => setTipografias(result))
+            .catch(err => console.log(err))
+    }, []);
 
     return <ItemDetail items={tipografias} />
     
