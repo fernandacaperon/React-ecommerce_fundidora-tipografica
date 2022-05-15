@@ -1,22 +1,60 @@
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { Card, CardBody, CardTitle, CardSubtitle } from "reactstrap";
-// import { CardText, Button, CardGroup, CardImg, } from "reactstrap";
 import { Link } from 'react-router-dom';
-// import { products } from "../utils/products";
-
-
-// {
-//     stock && contador
-//     ? <button className="btn-color-violeta" onClick={ () => onAdd (contador)}> Add to cart </button>
-//     : <button className="btn-color-violeta"> Agregar al carrito</button>
-// }
-
+import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
+import { async } from "@firebase/util";
+import db from '../utils/firebaseConfig';
 
 
 const Cart = () => {
 
     const test = useContext(CartContext);
+
+    const createOrder = () => {
+        const itemsForDB = test.cartList.map(item => ({
+          id: item.idItem,
+          title: item.nameItem,
+          price: item.costItem
+        }));
+    
+        test.cartList.forEach(async (item) => {
+          const itemRef = doc(db, "products", item.idItem);
+          await updateDoc(itemRef, {
+            stock: increment(-item.qtyItem)
+          });
+        });
+
+    const checkout = () => {
+        let order ={
+            buyer : {
+                name: "Nombre",
+                email: "email@gmail.com",
+                phone: "1162946866"
+            },
+            date: serverTimestamp (),
+            items: test.cartList.map(item => ({
+                id: item.idItem,
+                title: item.nameItem,
+                price: item.costItem,
+                qty: item.qtyItem
+            })),
+            total: test.calcTotal ()
+        }
+
+        const createOrderinFirestore = async () => {
+            const newOrderRef = doc(collection(db, "orders"));
+            await setDoc (newOrderRef, order);
+            return newOrderRef;
+        }
+
+            createOrderinFirestore () 
+                .then (result => alert('Tu orden fue creada. Id orden '+ result.id + '\n\n'))
+                .catch (err=> console.log(err));
+
+  
+    test.removeList();
+    }
   
     return (
         <Card> 
@@ -59,12 +97,13 @@ const Cart = () => {
                     <CardBody> 
                     <CardSubtitle> Subtotal: <p number={test.calcSubTotal()}> </p> </CardSubtitle>
                     <CardSubtitle> Total: <p number={test.calcTotal()}> </p></CardSubtitle>
+                    <button onClick={checkout}>checkout now </button>
                 </CardBody>
                 )
             }
         </Card>
     );
 }
-
+}
 
 export default Cart;
