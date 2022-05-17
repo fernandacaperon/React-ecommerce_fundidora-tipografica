@@ -25,26 +25,24 @@ const Cart = () => {
           });
         });
 
-    const checkout = () => {
-        let order ={
+        let order = {
             buyer : {
                 name: "Nombre",
                 email: "email@gmail.com",
                 phone: "1162946866"
             },
-            date: serverTimestamp (),
-            items: test.cartList.map(item => ({
-                id: item.idItem,
-                title: item.nameItem,
-                price: item.costItem,
-                qty: item.qtyItem
-            })),
-            total: test.calcTotal ()
+            total: test.calcTotal(),
+            items: itemsForDB,
+            date: serverTimestamp()
+          };
+
+          console.log(order);
+
         }
 
         const createOrderinFirestore = async () => {
             const newOrderRef = doc(collection(db, "orders"));
-            await setDoc (newOrderRef, order);
+            // await setDoc (newOrderRef, order);
             return newOrderRef;
         }
 
@@ -54,6 +52,9 @@ const Cart = () => {
 
   
     test.removeList();
+
+    const checkout = () => {
+        
     }
   
     return (
@@ -97,13 +98,12 @@ const Cart = () => {
                     <CardBody> 
                     <CardSubtitle> Subtotal: <p number={test.calcSubTotal()}> </p> </CardSubtitle>
                     <CardSubtitle> Total: <p number={test.calcTotal()}> </p></CardSubtitle>
-                    <button onClick={checkout}>checkout now </button>
+                    <button onClick={createOrder}>checkout now </button>
                 </CardBody>
                 )
             }
         </Card>
     );
-}
 }
 
 export default Cart;
