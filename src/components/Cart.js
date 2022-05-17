@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { Link } from 'react-router-dom';
+import { useContext, useEffect } from "react";
 import { CartContext } from "./CartContext";
 import { Card, CardBody, CardTitle, CardSubtitle } from "reactstrap";
-import { Link } from 'react-router-dom';
-import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
 import { async } from "@firebase/util";
+import FormatNumber from '../utils/FormatNumber';
+import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
 import db from '../utils/firebaseConfig';
 
 
