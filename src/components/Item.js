@@ -10,7 +10,7 @@ export default function Item ({ id, name, cost, description, image }){
                 <CardImg alt="Card image" src={image} top width="30%"/>
                 <CardBody>
                     <CardTitle tag="h5" className="title-card">{name}</CardTitle>
-                    <CardSubtitle className="mb-2 text-muted txt-violeta" tag="h6"> {cost} </CardSubtitle>
+                    <CardSubtitle className="mb-2 text-muted txt-violeta" tag="h6">U$S {cost} </CardSubtitle>
                     <CardText>{description} </CardText>
                     <Link to={`/item/${id}`}><Button className="btn-color-verde" > Comprar</Button> </Link>
                 </CardBody>

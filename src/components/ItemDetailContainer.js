@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
         firestoreFetchOne(idItem)
             .then(result => setTipografias(result))
             .catch(err => console.log(err))
-    }, []);
+    }, [idItem]);
 
     return <ItemDetail items={tipografias} />
     

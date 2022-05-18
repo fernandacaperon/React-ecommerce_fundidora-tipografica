@@ -3,13 +3,13 @@ import { createContext, useState } from "react";
 export const CartContext = createContext ();
 
 const CartContextProvider = ({children}) => {
-    const [cartList, setCartList] = useState ([ ]);
+    const [tipografias, setTipografias] = useState ([ ]);
 
     const addToCart = (item, qty) => {
-        let found = cartList.find (product => product.item === item.id);
+        let found = tipografias.find (product => product.item === item.id);
         if ( found === undefined) {
-            setCartList ([
-                ...cartList, 
+            setTipografias ([
+                ...tipografias, 
                 {
                     idItem: item.id,
                     imgItem: item.image[0],
@@ -24,27 +24,27 @@ const CartContextProvider = ({children}) => {
     }   
 
     const deleteItem = (id) =>{
-        let result = cartList.filter (item =>item.idItem != id );
-        setCartList (result);
+        let result = tipografias.filter (item =>item.idItem !== id );
+        setTipografias (result);
     }
 
     const removeCart = () => {
-        setCartList ([]);
+        setTipografias ([]);
     }
 
     const calcItemsQty = (id) => {
-        let qtys = cartList.map(item => item.qtyItem);
+        let qtys = tipografias.map(item => item.qtyItem);
         return qtys.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
     }
 
     const  calcTotalPerItem =  (idItem) => {
-        let index = cartList.map((item) => item.idItem).indexOf(idItem);    
+        let index = tipografias.map((item) => item.idItem).indexOf(idItem);    
         console.log(index);
-        return cartList[index].costItem * cartList[index].qtyItem;
+        return tipografias[index].costItem * tipografias[index].qtyItem;
         };  
 
     const calcSubTotal = () => {
-        let totalPerItem = cartList.map(item => calcTotalPerItem(item.idItem));
+        let totalPerItem = tipografias.map(item => calcTotalPerItem(item.idItem));
         return totalPerItem.reduce((previousValue, currentValue) => previousValue + currentValue);
     }
 
@@ -54,7 +54,7 @@ const CartContextProvider = ({children}) => {
 
     return  (
         <CartContext.Provider value={{
-            cartList, 
+            tipografias, 
             addToCart, 
             removeCart, 
             deleteItem, 
