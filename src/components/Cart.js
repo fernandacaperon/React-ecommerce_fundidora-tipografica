@@ -52,11 +52,11 @@ const Cart = () => {
                 .catch (err=> console.log(err));
 
   
-    test.removeList();
+    // test.removeList();
 
-    const checkout = () => {
+    // const checkout = () => {
         
-    }
+    // }
   
     return (
         <Card> 
@@ -97,10 +97,10 @@ const Cart = () => {
             {
                 test.cartList.length > 0 &&  (
                     <CardBody> 
-                    <CardSubtitle> Subtotal: <p number={test.calcSubTotal()}> </p> </CardSubtitle>
-                    <CardSubtitle> Total: <p number={test.calcTotal()}> </p></CardSubtitle>
-                    <button onClick={createOrder}>checkout now </button>
-                </CardBody>
+                        {/* <CardSubtitle> Subtotal: <p number={test.calcSubTotal()}> </p> </CardSubtitle> */}
+                        <CardSubtitle> Total: <p number={test.calcTotal()}> </p></CardSubtitle>
+                        <button className="btn-color-violeta" onClick={createOrder}>checkout now </button>
+                    </CardBody>
                 )
             }
         </Card>

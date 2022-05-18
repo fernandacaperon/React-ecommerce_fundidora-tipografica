@@ -8,16 +8,3 @@ const App = () => {
 };
 
 export default App;
-
-
-// function App () {
-//   return (
-//     <> 
-//       <NavBar /> 
-//       <ItemListContainer gretting = "Productos" />
-//       <ItemDetailContainer gretting = "Detalle" />
-//       {/* <ItemCount stock = {5} initial= {1} /> */}
-//     </>
-//   );
-// }
-// export default App;

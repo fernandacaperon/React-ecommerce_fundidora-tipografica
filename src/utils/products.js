@@ -1,7 +1,3 @@
-// import itemListContainer from "../components/ItemListContainer";
-// import Item from "../components/Item";
-// import ItemDetailContainer from "../components/ItemDetailContainer";
-
 const products = [
     {
         id: 1,

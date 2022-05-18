@@ -20,17 +20,3 @@ const CartWidget = () => {
 }
 
 export default CartWidget;
-
-
-{/* <Badgediv badgeContent={test.calcItemsQty()} color="secondary">
-<ShoppingCartOutlined />
-</Badge> */}
-
-
-{/* <p className="d-flex justify-content-end"> 
-<i className="bi bi-cart nav-text" style={{ fontSize: 28 }}>  
-    <span className="position-absolute top-50 translate-middle badge bg-danger" style={{ fontSize: 10 }}> 
-        <span className="visually-hidden"></span>
-    </span>
-</i>
-</p>  */}
