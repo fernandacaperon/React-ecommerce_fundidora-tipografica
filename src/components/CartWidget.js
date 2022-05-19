@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useContext } from 'react';
 import { CartContext } from './CartContext';
-// import { useContext, useEffect } from 'react';
 
 
 const CartWidget = () => {
